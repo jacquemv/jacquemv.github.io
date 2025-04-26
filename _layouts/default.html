@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% seo %}
+    <link rel="icon" type="image/png" sizes="37x37" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>{{ site.owner_name }}</h1>
+        <h2>{{ site.owner_title }}</h2>
+        <ul>
+          {% for bullet_point in site.table_of_contents %}
+            <li><a href="{{ bullet_point.link }}">
+              {{ bullet_point.title }}
+            </a></li>
+          {% endfor %}
+        </ul>
+        <a href="https://www.umontreal.ca"><img src="{{ site.logo_image }}"></a>
+      </header>
+
+      <section>
+        {{ content }}
+      </section>
+
+      <footer>
+      </footer>
+    </div>
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
